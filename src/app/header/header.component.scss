@@ -1,0 +1,31 @@
+.header-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+    background-color: rgb(59 59 59);
+}
+
+.left-side{
+    margin-left: 50px;
+    color: white;
+    transition: .2s;
+    &:hover{
+        color: gray;
+        cursor: pointer;
+    }
+}
+.right-side{
+    margin-right: 50px;
+    display: flex;
+    gap: 10px;
+    a{
+        color: white;
+        text-decoration: none;
+        transition: .2s;
+        &:hover{
+            color: gray;
+        }
+    }
+}

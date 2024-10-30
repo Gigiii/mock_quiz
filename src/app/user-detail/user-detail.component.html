@@ -1,0 +1,33 @@
+<h1>{{ user?.email }}</h1>
+
+<table *ngIf="user" class="user-details-table">
+  <tr>
+    <td><strong>ID:</strong></td>
+    <td>{{ user.id }}</td>
+  </tr>
+  <tr>
+    <td><strong>Username:</strong></td>
+    <td>{{ user.username }}</td>
+  </tr>
+  <tr>
+    <td><strong>Registration Time:</strong></td>
+    <td>{{ user.registrationTime | date:'medium' }}</td>
+  </tr>
+  <tr>
+    <td><strong>Last Login:</strong></td>
+    <td>{{ user.lastLogin | date:'medium' }}</td>
+  </tr>
+  <tr>
+    <td><strong>Status:</strong></td>
+    <td>
+      <span *ngIf="user.status === 'Confirmed'" class="green">
+        {{ user.status }}
+      </span>
+      <span *ngIf="user.status === 'Blocked'" class="red">
+        {{ user.status }}
+      </span>
+    </td>
+  </tr>
+</table>
+
+<p *ngIf="!user">User not found!</p>

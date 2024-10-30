@@ -1,0 +1,47 @@
+<h1>User List</h1>
+<ul>
+</ul>
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Registration Time</th>
+        <th>Last Login</th>
+        <th>Status</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users" (click)="goToUserDetails(user.id)">
+            
+            <td>
+                {{user.id}}
+            </td>
+
+            <td>
+                {{user.username}}
+            </td>
+
+            <td>
+                {{user.email}}
+            </td>
+
+            <td>
+                {{user.registrationTime | date:'medium' }}
+            </td>
+
+            <td>
+                {{user.lastLogin | date:'medium' }}
+            </td>
+
+            <td>
+                <p *ngIf="user.status === 'Confirmed'" ngClass="green">
+                    {{user.status}}
+                </p>
+                <p *ngIf="user.status === 'Blocked'" ngClass="red">
+                    {{user.status}}
+                </p>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
